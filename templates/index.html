@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Index</title>
+</head>
+<body>
+    <br>
+    <h3 style="display: inline;">Добро пожаловать, {{ session['username'] }}</h3>
+    <a href="/logout" style="display: inline-block;">(выход)</a>
+    <div class="container">
+      <div class="form-container">
+        <h3>Добавление пользователя FTP</h3>
+        <form id="addUserForm" onsubmit="addUser(); return false;">
+            <input type="text" id="username" name="username" maxlength="12" placeholder="Имя пользователя" required="required"><br>
+            <input type="password" id="password" name="password" placeholder="Пароль" required="required"><br>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required="required"><br>
+            <button type="submit">Добавить</button>
+        </form>
+      </div>
+      <div class="user-list-container">
+        <h3>Список пользователей</h3>
+        <input type="text" id="searchInput" oninput="showUserList(0)" placeholder="Введите имя пользователя для поиска">
+        <div id="userList"></div><br>
+        <button onclick="previousPage()">Предыдущая</button>
+        <span id="pageInfo"></span>
+        <button onclick="nextPage()">Следующая</button>
+        <button onclick="deleteUser()">Удалить</button>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script>
+        // При загрузке страницы показываем первую страницу списка пользователей
+        showUserList(0);
+    </script>
+</body>
+</html>

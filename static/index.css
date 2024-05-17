@@ -1,0 +1,79 @@
+html {
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+    height: 570px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-container {
+    flex: 0 0 40%;
+    margin-right: 20px;
+}
+.user-list-container {
+    flex: 0 0 50%;
+}
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+/*    height: 400px; */
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    height: 20px;
+    overflow: hidden; /* Обрезаем текст, если он не помещается */
+    text-overflow: ellipsis; /* Добавляем многоточие для обрезанного текста */
+}
+
+table th {
+    background-color: #bbb;
+    color: #fff;
+}
+tr:nth-child(even) {
+   background-color: #f2f2f2; /* Цвет фона для четных строк */
+}
+tr:hover {
+   background-color: #ddd; /* Цвет фона при наведении на строку */
+}
+/* Разделяем таблицу на две колонки */
+.left-column {
+    width: 80%; /* Левая колонка занимает 80% ширины таблицы */
+}
+
+.right-column {
+    width: 20%; /* Правая колонка занимает 20% ширины таблицы */
+}
